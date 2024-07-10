@@ -1,0 +1,79 @@
+/* src/darkTheme.css */
+
+body {
+    background-color: #2a2c3a;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+h2 {
+    text-align: center;
+    font-size: 40px;
+}
+
+.add-todo {
+    background-color: red;
+    background-color: #18181c;
+    padding: 20px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 70px;
+}
+
+.add-todo input {
+    background: transparent;
+    border: 1px solid #2a2c3a;
+    padding: 10px;
+    width: 20rem;
+    border-radius: 8px;
+    color: #ccc;
+}
+
+.add-todo button {
+    background: transparent;
+    border: 1px solid #2a2c3a;
+    padding: 10px 30px;
+    border-radius: 8px;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.todos ul {
+    padding: 0;
+}
+
+.todos ul li {
+    list-style: none;
+    background-color: #18181c;
+    border-radius: 8px;
+    margin-top: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px;
+    color: #ccc;
+}
+
+.todos ul li button {
+    background: transparent;
+    color: red;
+    border: none;
+    display: none;
+    cursor: pointer;
+}
+
+.todos ul li:hover button {
+    display: block;
+}
+
+.delete {
+    background-color: #2a2c3a;
+    padding: 10px;
+    margin-top: 20px;
+    color: #fff;
+    cursor: pointer;
+}
