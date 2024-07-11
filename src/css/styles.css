@@ -58,6 +58,17 @@ h2 {
     color: #ccc;
 }
 
+.todos ul li .todo {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.todos ul li .todo .line-through {
+    text-decoration: line-through;
+    color: #8c8888;
+}
+
 .todos ul li button {
     background: transparent;
     color: red;

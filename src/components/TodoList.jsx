@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { addTodo, removeAllTodos, removeTodo } from '../redux/action';
 import { FaRegTrashAlt } from "react-icons/fa";
+import { Checkbox } from 'antd';
 
 const TodoList = () => {
   const [todo, setTodo] = useState('')
@@ -18,13 +19,20 @@ const TodoList = () => {
   }
 
   const handleRemoveTodo = (id) => {
-    dispatch(removeTodo(id));
-  };
+    dispatch(removeTodo(id))
+  }
 
   const handleRemoveAllTodos = () => {
     dispatch(removeAllTodos())
   }
 
+  const [checked, setChecked] = useState([]);
+
+  const handleCheck = (id) => {
+    const newChecked = [...checked]
+    newChecked[id] = !newChecked[id]
+    setChecked(newChecked);
+  }
   return (
     <div className='todo-list'>
       <h2>Todo-List</h2>
@@ -36,7 +44,10 @@ const TodoList = () => {
         <ul>
           {todos.map((todo, id) => (
             <li key={id}>
-              {todo}
+              <div className='todo'>
+                <Checkbox onChange={() => handleCheck(id)} className='checkbox'></Checkbox>
+                <label className={`${checked[id] ? 'line-through' : ''}`}>{todo}</label>
+              </div>
               <button onClick={() => handleRemoveTodo(id)}><FaRegTrashAlt /></button>
             </li>
           ))}
